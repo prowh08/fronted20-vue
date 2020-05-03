@@ -1,0 +1,35 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    div#app { padding: 20px; margin: 20px auto; max-width: auto; 
+      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa;  }
+    table { border-collapse: collapse; margin: auto; }
+    td { padding: 5px; border: 1px solid black;  text-align: center; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <table>
+        <tr>
+            <td v-for="r in row_size">
+                <div v-for="c in col_size">
+                  {{r+1}} * {{c}} = {{(r+1)*c}}
+                </div>
+              </td>
+        </tr>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        row_size: 8,
+        col_size: 9
+      }
+    })
+   </script>
+</body>    
+</html>
