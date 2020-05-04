@@ -8,5 +8,5 @@ function testsum() {
    arr[i]=Math.floor(Math.random()*11);
    console.log(arr);
 }
-
-sum(testsum);
+for(let i=0;i<5;++i)
+    console.log(testsum(sum()))
