@@ -9,24 +9,32 @@
     div#app 
     { padding: 50px; margin: 30px auto; max-width: 350px;
      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; font-size: 11pt; } 
-    div#col { margin: auto; padding: 20px; width: 100px; height: 100px;
-      background-color: #ffa; border: 1px solid gray; }
-     button { padding: 5px; width: 100px; margin-bottom: 10px; margin-left: 40px;}
+     input { padding: 6px; width: 250px; }
+     button { padding: 6px; width: 50px; }
+     span { display: inline-block; margin: 5px; padding: 8px 15px; 
+            border: 1px solid black; }
+
      </style> 
 </head>
 <body>
   <div id="app">
-    <button type="button" :disabled ="visible" v-on:click="visible=true">보이기</button>
-    <button type="button" :disabled ="!visible" v-on:click="visible=!visible">감추기</button>
-    <div id="col" v-if="visible"></div>
+    <input type="text" v-model="num" />
+    <button type="button" v-on:click="cre">생성</button>
+    <span v-for="i in num">
+        {{ i }}
+      </span>  
   </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
-        visible:true
+        num:0,
+        ran:0
       },
       methods: {
+          cre:function(){
+              this.ran=Math.floor(Math.random()*10)
+          }
       }
     })
    </script>
