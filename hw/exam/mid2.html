@@ -9,27 +9,28 @@
     div#app 
     { padding: 50px; margin: 30px auto; max-width: 350px;
      border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; font-size: 11pt; } 
-     input { padding: 6px; width: 250px; }
-     button { padding: 6px; width: 30px; }
+    div#col { margin: auto; padding: 20px; width: 100px; height: 100px;
+      background-color: #ffa; border: 1px solid gray; }
+     button { padding: 5px; width: 100px; margin-bottom: 10px; margin-left: 40px;}
      </style> 
 </head>
 <body>
   <div id="app">
-    <input type="text" v-model="num" />
-    <button type="button" v-on:click="increase">++</button>
-    <button type="button" v-on:click="decrease">--</button>
+    <button type="button" :disabled ="visible" v-on:click="show" v-model = "visible">보이기</button>
+    <button type="button" :disabled ="!visible" v-on:click="hide">감추기</button>
+    <div id="col" v-show="visible"></div>
   </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
-        num:0
+        visible:true
       },
       methods: {
-          increase:function(){
+          show:function(){
               this.num++;
           },
-          decrease:function(){
+          hid:function(){
               this.num--;
           }
       }
