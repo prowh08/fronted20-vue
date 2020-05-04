@@ -1,2 +1,2 @@
 let persons1=[]
-console.log(persons1);
+console.log(persons1)

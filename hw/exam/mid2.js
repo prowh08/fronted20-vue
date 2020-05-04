@@ -8,5 +8,5 @@ a.sort(num)
 console.log(a)
 
 function num(i,j){
-    return j-i;
+    return j-i
 }

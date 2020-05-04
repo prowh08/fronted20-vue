@@ -6,4 +6,4 @@ for(let i=0;i<100;++i){
     sum+=a[i]
     cnt++
 }
-console.log((sum/cnt).toFixed(1))
+console.log((sum/cnt).toFixed(1));

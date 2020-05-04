@@ -8,6 +8,6 @@ a.forEach(function (n) {
     if (n % 2 == 0) {
         sum+=n;
     }
-});
+})
 
 console.log(sum);
