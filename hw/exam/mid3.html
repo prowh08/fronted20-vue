@@ -20,10 +20,9 @@
   <div id="app">
     <input type="text" v-model="num" />
     <button type="button" v-on:click="cre">생성</button>
-    <span v-for="i in ran">
-      {{ i }}
-    </span>
-  
+    <span v-for="ran in num">
+        {{ ran }}
+      </span>  
   </div>
   <script type="text/javascript">
     var app = new Vue({
@@ -34,7 +33,8 @@
       },
       methods: {
           cre:function(){
-             this.ran=Math.floor(Math.random()*10);
+              this.num++;
+              this.ran=Math.floor(Math.random()*10)
           }
       }
     })
